@@ -1,0 +1,27 @@
+.botoes{
+    display: flex;
+    flex-direction: column;
+}
+button{
+    background-color: #2e6bee;
+    color: #FFFFFF;
+    border: none;
+    font-family: poppins;
+    font-size: 20px;
+    border-radius: 40px;
+    height: 90px;
+    width: 290px;
+    margin: 10px;
+}
+button:hover{
+    background-color: #FFFFFF;
+    color: #2e6bee;
+    border: 2px solid #2e6bee;
+    transition: all ease 0.3s;
+}
+button:not(:hover){
+    background-color: #2e6bee;
+    color: #FFFFFF;
+    border: none;
+    transition: all ease 0.3s;
+}
