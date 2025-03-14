@@ -17,35 +17,44 @@ $resultado_not = mysqli_query($conn, $query_not);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Cadastro do aluno</title>
 </head>
 <body>
-    <form action="gravar_aluno.php" method="post">
+    <form action="gravar_aluno.php" method="post" class="form">
         <h1>Cadastro do aluno</h1>
-        <label for="nome">Nome</label>
-        <input type="text" name="alu_nome" required>
+        <div class="single-input">
+            <label for="nome" class="label">Nome</label>
+            <input type="text" name="alu_nome" class="input" required>
+        </div>
         <br>
-        <label for="sala">Sala</label>
-        <input type="text" name="alu_sala" required>
+        <div class="single-input">
+            <label for="sala" class="label">Sala</label>
+            <input type="text" name="alu_sala" class="input" required>
+        </div>
         <br>
-        <label for="carrinho">Carrinho</label>
-        <select name="alu_car" required>
-            <option value="">Selecione o carrinho</option>
-            <?php while ($row_car = mysqli_fetch_assoc($resultado_car)) { ?>
-                <option value="<?php echo $row_car['car_numero']; ?>"><?php echo $row_car['car_numero']; ?></option>
-            <?php } ?>
-        </select>
+        <div class="single-input">
+            <label for="carrinho" class="label">Carrinho</label>
+            <select name="alu_car" required>
+                <option value="">Selecione o carrinho</option>
+                <?php while ($row_car = mysqli_fetch_assoc($resultado_car)) { ?>
+                    <option value="<?php echo $row_car['car_numero']; ?>"><?php echo $row_car['car_numero']; ?></option>
+                <?php } ?>
+            </select>
+        </div>
         <br>
-        <label for="notebook">Notebook</label>
-        <select name="alu_not" required>
-            <option value="">Selecione o notebook</option>
-            <?php while ($row_not = mysqli_fetch_assoc($resultado_not)) { ?>
-                <option value="<?php echo $row_not['not_numero']; ?>"><?php echo $row_not['not_numero']; ?></option>
-            <?php } ?>
-        </select>
+        <div class="single-input">
+            <label for="notebook" class="label">Notebook</label>
+            <select name="alu_not" required>
+                <option value="">Selecione o notebook</option>
+                <?php while ($row_not = mysqli_fetch_assoc($resultado_not)) { ?>
+                    <option value="<?php echo $row_not['not_numero']; ?>"><?php echo $row_not['not_numero']; ?></option>
+                <?php } ?>
+            </select>
+        </div>
         <br>
-        <input type="submit" value="Cadastrar" id="button">
+        <input type="submit" value="Cadastrar" class="botao">
     </form>
 </body>
 </html>

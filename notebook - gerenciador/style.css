@@ -3,8 +3,8 @@
     flex-direction: column;
 }
 button{
-    background-color: #2e6bee;
-    color: #FFFFFF;
+    background-color: #FFFFFF;
+    color: #ff0008;
     border: none;
     font-family: poppins;
     font-size: 20px;
@@ -12,16 +12,91 @@ button{
     height: 90px;
     width: 290px;
     margin: 10px;
+    border: #ff0008 2px solid;
 }
 button:hover{
-    background-color: #FFFFFF;
-    color: #2e6bee;
-    border: 2px solid #2e6bee;
-    transition: all ease 0.3s;
+    background-color: #ff0008;
+    color: #FFFFFF;
+    transition: all ease-in 0.5s;
+    cursor: pointer;
 }
 button:not(:hover){
-    background-color: #2e6bee;
+    background-color: #FFFFFF;
+    color: #ff0008;
+    border: #ff0008 2px solid;
+    transition: all ease-in 0.3s;
+}
+div.single-input{
+    width: 100%;
+    margin: 30px 0px;
+    position: relative;
+}
+div.single-input .label{
+    font-size: 15px;
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    color: white;
+    cursor: text;
+    transition: 0.4s ease-in-out;
+}
+div.single-input .input{
+    width: 100%;
+    color: white;
+    border: 0;
+    border-bottom: 2px solid white;
+    outline: 0;
+    font-size: 15px;
+}
+div.single-input .input:focus,
+div.single-input .input:valid{
+    border-bottom: 2px solid #ff4248;
+}
+div.single-input .input:focus ~ label,
+div.single-input .input:valid ~ label{
+    transform: translateY(-24px);
+    font-size: 12px;
+    color: #ff4248;
+    transition: 0.4s ease-in-out;
+}
+.form {
+    margin: 0 auto; 
+    background-color: #ff0008;
+    padding: 50px;
+    border-radius: 30px;
+    width: 30%;
+    z-index: 2;
+    font-family: poppins;
+}
+input{
+    background-color: #ff0008;
+    font-family: poppins;
+}
+.botao{
+    font-family: poppins;
+    font-size: 15px;
+    width: 20%;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: #ff0008;
+    color: white;
+    margin: 1%;
+}
+.botao:hover{
+    background-color: white;
+    color: #ff0008;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+.botao:not(:hover){
+    background-color: #ff0008;
+    color: white;
+    transition: all 0.2s ease-in;
+}
+.botao:active{
+    transform: scale(0.9);
+}
+h1{
     color: #FFFFFF;
-    border: none;
-    transition: all ease 0.3s;
 }

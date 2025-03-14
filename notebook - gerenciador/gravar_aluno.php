@@ -19,7 +19,7 @@
     echo "<br>";
     echo $alu_not;
 
-    $query = mysqli_query($conexao, "insert into carrinho (alu_nome, alu_sala, alu_carrinho, alu_notebook) values ('$alu_nome','$alu_sala','$alu_car','$alu_not');");
+    $query = mysqli_query($conexao, "insert into aluno (alu_nome, alu_sala, alu_carrinho, alu_notebook) values ('$alu_nome','$alu_sala','$alu_car','$alu_not');");
 
     echo("<br>Gravado! Deseja ir a consulta?");
     mysqli_close ($conexao);
