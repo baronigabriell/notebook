@@ -1,30 +1,36 @@
 .botoes{
-    display: flex;
-    flex-direction: column;
+    background-color: #ffffff;
+    border: 2px #000 solid;
+    height: 98.8vh;
 }
-button{
-    background-color: #FFFFFF;
-    color: #ff0008;
+a{
+    text-decoration: none;
+}
+
+.botao-menu{
+    position: relative;
+    background-color: #000;
+    color: #000;
     border: none;
     font-family: poppins;
     font-size: 20px;
-    border-radius: 40px;
-    height: 90px;
-    width: 290px;
+    border-radius:50px;
+    height: 280px;
+    width: 280px;
     margin: 10px;
-    border: #ff0008 2px solid;
+    padding-left: 20px;
+    padding-top:5px;
 }
-button:hover{
+.botao-menu:hover{
     background-color: #ff0008;
     color: #FFFFFF;
-    transition: all ease-in 0.5s;
+    transition: all ease-in-out 0.4s;
     cursor: pointer;
 }
-button:not(:hover){
-    background-color: #FFFFFF;
+.botao-menu:not(:hover){
+    background-color: #000;
     color: #ff0008;
-    border: #ff0008 2px solid;
-    transition: all ease-in 0.3s;
+    transition: all ease-in-out 0.4s;
 }
 div.single-input{
     width: 100%;
@@ -36,40 +42,37 @@ div.single-input .label{
     position: absolute;
     left: 0;
     bottom: 5px;
-    color: white;
+    color: #000;
     cursor: text;
     transition: 0.4s ease-in-out;
 }
 div.single-input .input{
     width: 100%;
-    color: white;
+    color: #ff0008;
     border: 0;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #000;
     outline: 0;
     font-size: 15px;
 }
 div.single-input .input:focus,
 div.single-input .input:valid{
-    border-bottom: 2px solid #ff4248;
+    border-bottom: 2px solid #ff0008;
 }
 div.single-input .input:focus ~ label,
 div.single-input .input:valid ~ label{
     transform: translateY(-24px);
     font-size: 12px;
-    color: #ff4248;
     transition: 0.4s ease-in-out;
 }
 .form {
     margin: 0 auto; 
-    background-color: #ff0008;
+    border: #000 2px solid;
     padding: 50px;
-    border-radius: 30px;
     width: 30%;
     z-index: 2;
     font-family: poppins;
 }
 input{
-    background-color: #ff0008;
     font-family: poppins;
 }
 .botao{
@@ -77,26 +80,38 @@ input{
     font-size: 15px;
     width: 20%;
     height: 40px;
-    border: 2px solid white;
+    border: 2px solid #000;
     border-radius: 10px;
-    background-color: #ff0008;
-    color: white;
+    color: #000;
     margin: 1%;
 }
 .botao:hover{
-    background-color: white;
-    color: #ff0008;
+    background-color: #ff0008;
+    border: #ff0008;
+    color: white;
     cursor: pointer;
     transition: all 0.2s ease-in;
 }
 .botao:not(:hover){
-    background-color: #ff0008;
-    color: white;
+    background-color: white;
+    color: #000;
     transition: all 0.2s ease-in;
 }
 .botao:active{
     transform: scale(0.9);
 }
 h1{
-    color: #FFFFFF;
+    color: #000;
+}
+select{
+    border: none;
+    font-family: poppins;
+    outline: none;
+    border-radius: 10px;
+}
+select:valid{
+    color: #ff0008;
+}
+select:valid ~ label{
+    color: #ff0008
 }

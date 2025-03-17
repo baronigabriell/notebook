@@ -10,23 +10,42 @@
 <body>
     <div class="botoes">
         <a href="cad_carrinho.php">
-            <button>Cadastrar carrinho</button>
+            <div class="botao-menu">
+                <h1>Cadastrar carrinho</h1>
+            </div>
         </a>
         <a href="cad_notebook.php">
-            <button>Cadastrar notebook</button>
+            <div class="botao-menu">
+                <h1>Cadastrar notebook</h1>
+            </div>
         </a>
         <a href="cad_professor.php">
-            <button>Cadastrar professor</button>
+            <div class="botao-menu">
+                <h1>Cadastrar professor</h1>
+            </div>
         </a>
+        <br>
         <a href="cad_aluno.php">
-            <button>Cadastrar aluno</button>
+            <div class="botao-menu">
+                <h1>Cadastrar aluno</h1>
+            </div>
         </a>
         <a href="tabela_aluno.php">
-            <button>Gerenciamento do aluno</button>
+            <div class="botao-menu">
+                <h1>Gerenciamento do aluno</h1>
+            </div>
         </a>
         <a href="tabela_professor.php">
-            <button>Gerenciamento do professor</button>
+            <div class="botao-menu">
+                <h1>Gerenciamento do professor</h1>
+            </div>
         </a>
     </div>
 </body>
+<style>
+    h1{
+        color: white;
+        font-size: 30px;
+    }
+</style>
 </html>

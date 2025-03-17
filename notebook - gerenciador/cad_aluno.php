@@ -1,9 +1,6 @@
 <?php
 $conn = mysqli_connect("localhost", "root", "", "notebook");
 
-if (!$conn) {
-    die("Falha na conexão: " . mysqli_connect_error());
-}
 
 $query_car = "SELECT car_numero FROM carrinho"; 
 $query_not = "SELECT not_numero FROM notebooks";
@@ -25,33 +22,37 @@ $resultado_not = mysqli_query($conn, $query_not);
     <form action="gravar_aluno.php" method="post" class="form">
         <h1>Cadastro do aluno</h1>
         <div class="single-input">
-            <label for="nome" class="label">Nome</label>
             <input type="text" name="alu_nome" class="input" required>
+            <label for="nome" class="label">Nome</label>
         </div>
         <br>
         <div class="single-input">
-            <label for="sala" class="label">Sala</label>
             <input type="text" name="alu_sala" class="input" required>
+            <label for="sala" class="label">Sala</label>
         </div>
         <br>
         <div class="single-input">
-            <label for="carrinho" class="label">Carrinho</label>
+            <label for="notebook" class="label" style="margin-bottom: 20px;">Carrinho</label>
             <select name="alu_car" required>
+                <br>
                 <option value="">Selecione o carrinho</option>
                 <?php while ($row_car = mysqli_fetch_assoc($resultado_car)) { ?>
                     <option value="<?php echo $row_car['car_numero']; ?>"><?php echo $row_car['car_numero']; ?></option>
                 <?php } ?>
             </select>
+            <br>
         </div>
         <br>
         <div class="single-input">
-            <label for="notebook" class="label">Notebook</label>
+            <label for="notebook" class="label" style="margin-bottom: 20px;">Notebook</label>
             <select name="alu_not" required>
+                <br>
                 <option value="">Selecione o notebook</option>
                 <?php while ($row_not = mysqli_fetch_assoc($resultado_not)) { ?>
                     <option value="<?php echo $row_not['not_numero']; ?>"><?php echo $row_not['not_numero']; ?></option>
                 <?php } ?>
             </select>
+
         </div>
         <br>
         <input type="submit" value="Cadastrar" class="botao">
