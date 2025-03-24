@@ -24,10 +24,10 @@
                 <h1>Cadastrar professor</h1>
             </div>
         </a>
-        <br>
+        
         <a href="cad_aluno.php">
             <div class="botao-menu">
-                <h1>Cadastrar aluno</h1>
+                <h1>Cadastrar <br>aluno</h1>
             </div>
         </a>
         <a href="tabela_aluno.php">
@@ -45,7 +45,7 @@
 <style>
     h1{
         color: white;
-        font-size: 30px;
+        font-size: 18px;
     }
 </style>
 </html>
