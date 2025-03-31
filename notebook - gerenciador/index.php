@@ -40,6 +40,11 @@
                 <h1>Gerenciamento do professor</h1>
             </div>
         </a>
+        <a href="not_retirada.php">
+            <div class="botao-menu">
+                <h1>Retirar notebook</h1>
+            </div>
+        </a>
     </div>
 </body>
 <style>

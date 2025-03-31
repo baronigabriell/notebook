@@ -32,29 +32,6 @@ $resultado_not = mysqli_query($conn, $query_not);
                 <label for="sala" class="label">Sala</label>
             </div>
             <br>
-            <div class="single-input">
-                <label for="notebook" class="label" style="margin-bottom: 20px;">Carrinho</label>
-                <select name="alu_car" required>
-                    <br>
-                    <option value="">Selecione o carrinho</option>
-                    <?php while ($row_car = mysqli_fetch_assoc($resultado_car)) { ?>
-                        <option value="<?php echo $row_car['car_numero']; ?>"><?php echo $row_car['car_numero']; ?></option>
-                    <?php } ?>
-                </select>
-                <br>
-            </div>
-            <br>
-            <div class="single-input">
-                <label for="notebook" class="label" style="margin-bottom: 20px;">Notebook</label>
-                <select name="alu_not" required>
-                    <br>
-                    <option value="">Selecione o notebook</option>
-                    <?php while ($row_not = mysqli_fetch_assoc($resultado_not)) { ?>
-                        <option value="<?php echo $row_not['not_numero']; ?>"><?php echo $row_not['not_numero']; ?></option>
-                    <?php } ?>
-                </select>
-            </div>
-            <br>
             <input type="submit" value="Cadastrar" class="botao">
         </form>
     </main>
