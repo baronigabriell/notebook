@@ -1,14 +1,3 @@
-<?php
-$conn = mysqli_connect("localhost", "root", "", "notebook");
-
-
-$query_car = "SELECT car_numero FROM carrinho"; 
-$query_not = "SELECT not_numero FROM notebooks";
-
-$resultado_car = mysqli_query($conn, $query_car);
-$resultado_not = mysqli_query($conn, $query_not);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,20 +9,25 @@ $resultado_not = mysqli_query($conn, $query_not);
 </head>
 <body>
     <main>
-        <form action="gravar_aluno.php" method="post" class="form">
-            <h1>Cadastro do aluno</h1>
-            <div class="single-input">
-                <input type="text" name="alu_nome" class="input" required>
-                <label for="nome" class="label">Nome</label>
-            </div>
-            <br>
-            <div class="single-input">
-                <input type="text" name="alu_sala" class="input" required>
-                <label for="sala" class="label">Sala</label>
-            </div>
-            <br>
-            <input type="submit" value="Cadastrar" class="botao">
-        </form>
+        <div class="form" style="margin-top: 90px;">
+            <form action="gravar_aluno.php" method="post">
+                <h1>Cadastro do aluno</h1>
+                <div class="single-input">
+                    <input type="text" name="alu_nome" class="input" required>
+                    <label for="nome" class="label">Nome</label>
+                </div>
+                <br>
+                <div class="single-input">
+                    <input type="text" name="alu_sala" class="input" required>
+                    <label for="sala" class="label">Sala</label>
+                </div>
+                <br>
+                <input type="submit" value="Cadastrar" class="botao">
+            </form>
+            <a href="consulta_aluno">
+                <button class="botao">Consultar</button>
+            </a>
+        </div>
     </main>
 </body>
 </html>

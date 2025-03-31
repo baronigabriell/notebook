@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Tempo de geração: 31/03/2025 às 04:57
--- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.2.12
+-- Host: 127.0.0.1:3306
+-- Tempo de geração: 31/03/2025 às 20:01
+-- Versão do servidor: 9.1.0
+-- Versão do PHP: 8.3.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,14 +29,15 @@ USE `notebook`;
 -- Estrutura para tabela `aluno`
 --
 
-CREATE TABLE `aluno` (
-  `alu_codigo` int(11) NOT NULL,
-  `alu_sala` varchar(20) NOT NULL,
-  `alu_carrinho` varchar(20) NOT NULL,
-  `alu_notebook` varchar(20) NOT NULL,
-  `alu_retirada` varchar(40) NOT NULL,
-  `alu_devolucao` varchar(40) NOT NULL,
-  `alu_nome` varchar(80) NOT NULL
+DROP TABLE IF EXISTS `aluno`;
+CREATE TABLE IF NOT EXISTS `aluno` (
+  `alu_codigo` int NOT NULL,
+  `alu_sala` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `alu_carrinho` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `alu_notebook` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `alu_retirada` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `alu_devolucao` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `alu_nome` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -44,7 +45,14 @@ CREATE TABLE `aluno` (
 --
 
 INSERT INTO `aluno` (`alu_codigo`, `alu_sala`, `alu_carrinho`, `alu_notebook`, `alu_retirada`, `alu_devolucao`, `alu_nome`) VALUES
-(3, '2DSSS', '', '', '', '', 'Gabriel Baroni');
+(3, '2DSSS', '', '', '', '', 'Gabriel Baroni'),
+(0, '2DSSS', '', '', '', '', 'Julinha'),
+(0, '2DSSS', '', '', '', '', ''),
+(0, '2DSSS', '', '', '', '', ''),
+(0, '2DSSS', '', '', '', '', ''),
+(0, '2DSSS', '', '', '', '', 'Julinha'),
+(0, '2DSSS', '', '', '', '', 'Gowi Nasantos'),
+(0, '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -52,11 +60,12 @@ INSERT INTO `aluno` (`alu_codigo`, `alu_sala`, `alu_carrinho`, `alu_notebook`, `
 -- Estrutura para tabela `carrinho`
 --
 
-CREATE TABLE `carrinho` (
-  `car_codigo` int(11) NOT NULL,
-  `car_numero` varchar(20) NOT NULL,
-  `car_voltagem` varchar(20) NOT NULL,
-  `car_capacidade` varchar(20) NOT NULL
+DROP TABLE IF EXISTS `carrinho`;
+CREATE TABLE IF NOT EXISTS `carrinho` (
+  `car_codigo` int NOT NULL,
+  `car_numero` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `car_voltagem` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `car_capacidade` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -65,7 +74,8 @@ CREATE TABLE `carrinho` (
 
 INSERT INTO `carrinho` (`car_codigo`, `car_numero`, `car_voltagem`, `car_capacidade`) VALUES
 (1, 'Carrinho 1', '127V', '20 notebooks'),
-(2, 'Carrinho 2', '120V', '20');
+(2, 'Carrinho 2', '120V', '20'),
+(0, 'Carrinho 3', '120v', '20');
 
 -- --------------------------------------------------------
 
@@ -73,13 +83,14 @@ INSERT INTO `carrinho` (`car_codigo`, `car_numero`, `car_voltagem`, `car_capacid
 -- Estrutura para tabela `notebooks`
 --
 
-CREATE TABLE `notebooks` (
-  `not_codigo` int(11) NOT NULL,
-  `not_numero` varchar(20) NOT NULL,
-  `not_marca` varchar(80) NOT NULL,
-  `not_modelo` varchar(80) NOT NULL,
-  `not_carrinho` varchar(20) NOT NULL,
-  `not_status` varchar(20) NOT NULL
+DROP TABLE IF EXISTS `notebooks`;
+CREATE TABLE IF NOT EXISTS `notebooks` (
+  `not_codigo` int NOT NULL,
+  `not_numero` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `not_marca` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `not_modelo` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `not_carrinho` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `not_status` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -97,7 +108,9 @@ INSERT INTO `notebooks` (`not_codigo`, `not_numero`, `not_marca`, `not_modelo`, 
 (8, '2', 'Samsung', '234-HP', 'Carrinho 2', ''),
 (9, '3', 'Samsung', '234-HP', 'Carrinho 2', ''),
 (10, '4', 'Samsung', '234-HP', 'Carrinho 2', ''),
-(11, '5', 'Samsung', '234-HP', 'Carrinho 2', '');
+(11, '5', 'Samsung', '234-HP', 'Carrinho 2', ''),
+(0, '1', 'Dell', 'SS', 'Carrinho 3', 'disponivel'),
+(0, '2000', 'Dell', 'SS', 'Carrinho 3', 'disponivel');
 
 -- --------------------------------------------------------
 
@@ -105,11 +118,12 @@ INSERT INTO `notebooks` (`not_codigo`, `not_numero`, `not_marca`, `not_modelo`, 
 -- Estrutura para tabela `professor`
 --
 
-CREATE TABLE `professor` (
-  `pro_codigo` int(11) NOT NULL,
-  `pro_nome` varchar(80) NOT NULL,
-  `pro_sala` varchar(20) NOT NULL,
-  `pro_materia` varchar(40) NOT NULL
+DROP TABLE IF EXISTS `professor`;
+CREATE TABLE IF NOT EXISTS `professor` (
+  `pro_codigo` int NOT NULL,
+  `pro_nome` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pro_sala` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pro_materia` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -125,101 +139,28 @@ INSERT INTO `professor` (`pro_codigo`, `pro_nome`, `pro_sala`, `pro_materia`) VA
 -- Estrutura para tabela `retiradas`
 --
 
-CREATE TABLE `retiradas` (
-  `retirada_id` int(11) NOT NULL,
-  `alu_codigo` int(11) NOT NULL,
-  `alu_nome` varchar(80) NOT NULL,
-  `alu_sala` varchar(20) NOT NULL,
-  `not_car` varchar(20) NOT NULL,
-  `not_num` varchar(20) NOT NULL,
-  `hora_retirada` varchar(20) DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+DROP TABLE IF EXISTS `retiradas`;
+CREATE TABLE IF NOT EXISTS `retiradas` (
+  `retirada_id` int NOT NULL AUTO_INCREMENT,
+  `alu_codigo` int NOT NULL,
+  `alu_nome` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `alu_sala` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `not_car` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `not_num` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `hora_retirada` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `hora_devolucao` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`retirada_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Despejando dados para a tabela `retiradas`
 --
 
-INSERT INTO `retiradas` (`retirada_id`, `alu_codigo`, `alu_nome`, `alu_sala`, `not_car`, `not_num`, `hora_retirada`) VALUES
-(0, 3, '', '2DSSS', 'Carrinho 2', '1', '0000-00-00 00:00:00'),
-(0, 3, '', '2DSSS', 'Carrinho 1', '17', '23:38:40');
-
---
--- Índices para tabelas despejadas
---
-
---
--- Índices de tabela `aluno`
---
-ALTER TABLE `aluno`
-  ADD PRIMARY KEY (`alu_codigo`);
-
---
--- Índices de tabela `carrinho`
---
-ALTER TABLE `carrinho`
-  ADD PRIMARY KEY (`car_codigo`),
-  ADD KEY `car_numero` (`car_numero`);
-
---
--- Índices de tabela `notebooks`
---
-ALTER TABLE `notebooks`
-  ADD PRIMARY KEY (`not_codigo`),
-  ADD KEY `not_numero` (`not_numero`);
-
---
--- Índices de tabela `professor`
---
-ALTER TABLE `professor`
-  ADD PRIMARY KEY (`pro_codigo`);
-
---
--- Índices de tabela `retiradas`
---
-ALTER TABLE `retiradas`
-  ADD KEY `alu_codigo` (`alu_codigo`),
-  ADD KEY `not_car` (`not_car`),
-  ADD KEY `not_numero` (`not_num`);
-
---
--- AUTO_INCREMENT para tabelas despejadas
---
-
---
--- AUTO_INCREMENT de tabela `aluno`
---
-ALTER TABLE `aluno`
-  MODIFY `alu_codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT de tabela `carrinho`
---
-ALTER TABLE `carrinho`
-  MODIFY `car_codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de tabela `notebooks`
---
-ALTER TABLE `notebooks`
-  MODIFY `not_codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT de tabela `professor`
---
-ALTER TABLE `professor`
-  MODIFY `pro_codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- Restrições para tabelas despejadas
---
-
---
--- Restrições para tabelas `retiradas`
---
-ALTER TABLE `retiradas`
-  ADD CONSTRAINT `retiradas_ibfk_1` FOREIGN KEY (`alu_codigo`) REFERENCES `aluno` (`alu_codigo`),
-  ADD CONSTRAINT `retiradas_ibfk_2` FOREIGN KEY (`not_car`) REFERENCES `carrinho` (`car_numero`),
-  ADD CONSTRAINT `retiradas_ibfk_3` FOREIGN KEY (`not_num`) REFERENCES `notebooks` (`not_numero`);
+INSERT INTO `retiradas` (`retirada_id`, `alu_codigo`, `alu_nome`, `alu_sala`, `not_car`, `not_num`, `hora_retirada`, `hora_devolucao`) VALUES
+(57, 3, 'Gabriel Baroni', '2DSSS', 'Carrinho 1', '17', '16:27:30', '2025-03-31 16:28:16'),
+(58, 0, 'Julinha', '2DSSS', 'Carrinho 1', '17', '2025-03-31 16:29:43', '2025-03-31 16:29:48'),
+(59, 0, 'Gowi Nasantos', '2DSSS', 'Carrinho 1', '17', '31/03/2025 16:30:40', '31/03/2025 16:31:01'),
+(60, 3, 'Gabriel Baroni', '2DSSS', 'Carrinho 3', '2000', '31/03/2025 16:53:57', '31/03/2025 16:54:21');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

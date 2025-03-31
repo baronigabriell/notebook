@@ -9,7 +9,7 @@
 </head>
 <body>
     <main>
-        <form action="gravar_car.php" method="post" class="form">
+        <form action="gravar_car.php" method="post" class="form" style="margin-top: 30px;">
             <h1>Cadastro do carrinho</h1>
             <div class="single-input">
                 <input type="text" name="car_num" id="car_num" class="input" required>

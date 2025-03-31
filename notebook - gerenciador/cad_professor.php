@@ -9,27 +9,32 @@
 </head>
 <body>
     <main>
-        <form action="gravar_professor.php" method="post" class="form">
-            <h1>Cadastro do professor</h1>
-            <div class="single-input">
-                <input type="text" name="pro_nome" class="input" required> 
-                <label for="nome" class="label">Nome</label>
+        <div class="form">
+            <form action="gravar_professor.php" method="post" style="margin-top: 30px;">
+                <h1>Cadastro do professor</h1>
+                <div class="single-input">
+                    <input type="text" name="pro_nome" class="input" required> 
+                    <label for="nome" class="label">Nome</label>
+                </div>
+                <br>
+                <div class="single-input">
+                    <input type="text" name="pro_sala" class="input" required>
+                    <label for="sala" class="label">Sala</label>
+                </div>
+                <br>
+                <div class="single-input">
+                    <input type="text" name="pro_materia" class="input" required>
+                    <label for="materia" class="label">Matéria</label>
+                </div>
+                <br>
+                <div class="single-input">
+                    <input type="submit" value="Enviar" id="button" class="botao">
+                </div>
+            </form>
+            <a href="consulta_professor">
+                <button class="botao">Consultar</button>
+            </a>
             </div>
-            <br>
-            <div class="single-input">
-                <input type="text" name="pro_sala" class="input" required>
-                <label for="sala" class="label">Sala</label>
-            </div>
-            <br>
-            <div class="single-input">
-                <input type="text" name="pro_materia" class="input" required>
-                <label for="materia" class="label">Matéria</label>
-            </div>
-            <br>
-            <div class="single-input">
-                <input type="submit" value="Enviar" id="button" class="botao">
-            </div>
-        </form>
     </main>
 </body>
 </html>

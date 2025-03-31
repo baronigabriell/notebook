@@ -8,6 +8,7 @@
     <title>Página inicial</title>
 </head>
 <body>
+    <center><h1 style="color: #323232; font-family: poppins; font-size: 30px; margin-top: 150px;">Retirada de notebooks<br>para o UP-LEARN 1</h1></center>
     <div class="botoes">
         <a href="cad_carrinho.php">
             <div class="botao-menu">
@@ -30,19 +31,14 @@
                 <h1>Cadastrar <br>aluno</h1>
             </div>
         </a>
-        <a href="tabela_aluno.php">
-            <div class="botao-menu">
-                <h1>Gerenciamento do aluno</h1>
-            </div>
-        </a>
-        <a href="tabela_professor.php">
-            <div class="botao-menu">
-                <h1>Gerenciamento do professor</h1>
-            </div>
-        </a>
         <a href="not_retirada.php">
             <div class="botao-menu">
                 <h1>Retirar notebook</h1>
+            </div>
+        </a>
+        <a href="tabela_aluno.php">
+            <div class="botao-menu">
+                <h1>Gerenciamento do aluno</h1>
             </div>
         </a>
     </div>

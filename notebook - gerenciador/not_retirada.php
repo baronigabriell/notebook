@@ -4,11 +4,9 @@ if (!$conn) {
     die("Falha na conexão: " . mysqli_connect_error());
 }
 
-// Buscar todas as salas
 $query_salas = "SELECT DISTINCT alu_sala FROM aluno";
 $resultado_salas = mysqli_query($conn, $query_salas);
 
-// Buscar todos os carrinhos
 $query_car = "SELECT car_numero FROM carrinho";
 $resultado_car = mysqli_query($conn, $query_car);
 ?>
@@ -21,14 +19,13 @@ $resultado_car = mysqli_query($conn, $query_car);
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>Retirada de Notebook</title>
+    <title>Retirada do notebook</title>
 </head>
 <body>
     <main>
-        <form action="gravar_retirada.php" method="post" class="form">
-            <h1>Retirada de Notebook</h1>
+        <form action="gravar_retirada.php" method="post" class="form" style="margin-top: 60px;">
+            <h1>Retirada do notebook</h1>
 
-            <!-- Select da Sala -->
             <div class="single-input">
                 <label for="sala" class="label" style="margin-bottom: 20px;">Sala</label>
                 <select name="alu_sala" id="alu_sala" required>
@@ -39,7 +36,6 @@ $resultado_car = mysqli_query($conn, $query_car);
                 </select>
             </div>
 
-            <!-- Select do Aluno -->
             <div class="single-input">
                 <label for="aluno" class="label" style="margin-bottom: 20px;">Aluno</label>
                 <select name="alu_nome" id="alu_nome" required>
@@ -47,7 +43,6 @@ $resultado_car = mysqli_query($conn, $query_car);
                 </select>
             </div>
 
-            <!-- Select do Carrinho -->
             <div class="single-input">
                 <label for="carrinho" class="label" style="margin-bottom: 20px;">Carrinho</label>
                 <select name="not_car" id="not_car" required>
@@ -58,7 +53,6 @@ $resultado_car = mysqli_query($conn, $query_car);
                 </select>
             </div>
 
-            <!-- Select do Notebook -->
             <div class="single-input">
                 <label for="notebook" class="label" style="margin-bottom: 20px;">Notebook</label>
                 <select name="not_num" id="not_num" required>
@@ -74,7 +68,6 @@ $resultado_car = mysqli_query($conn, $query_car);
 
     <script>
         $(document).ready(function() {
-            // Atualizar alunos ao selecionar a sala
             $('#alu_sala').change(function() {
                 var sala = $(this).val();
                 $.ajax({
@@ -87,7 +80,6 @@ $resultado_car = mysqli_query($conn, $query_car);
                 });
             });
 
-            // Atualizar notebooks ao selecionar o carrinho
             $('#not_car').change(function() {
                 var carrinho = $(this).val();
                 $.ajax({
